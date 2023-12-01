@@ -1,0 +1,304 @@
+                                             MODULE: 5
+                                           ==============
+
+  
+SQL Queries:          
+
+
+
+Q.1  Create table name:student and exam:
+========================================
+
+Ans:
+       Table 1: student
+       ==================        
+
+step 1:
+-------
+
+create table student(roll int(2) primary key not null,name varchar(30),branch varchar(30));
+
+step 2:
+--------
+
+INSERT INTO `student` (`roll`, `name`, `branch`) VALUES ('1', 'Jay', 'computer science'), ('2', 'Suhani', 'Electronic and Com'),('3', 'Kirti', 'Electronic and Com');
+
+Table 2: exam
+==============
+
+step 3:
+-------
+
+CREATE table exam(roll int(2) not null,s_code varchar(20),marks int(5),p_code varchar(5),FOREIGN KEY(roll) REFERENCES student(roll));
+
+step 4:
+--------
+
+INSERT INTO `exam` (`roll`, `s_code`, `marks`, `p_code`) VALUES ('1', 'CS11', '50', 'CS'),('1', 'CS12', '60', 'CS'),('2', 'EC101', '66', 'EC'),('2', 'EC102', '70', 'EC'),('3', 'EC101', '45', 'EC'),('3', 'EC102', '50', 'EC');
+
+--------------------------------------------------------------------------------------------------------------
+
+Q.2) Create table given  below:
+================================
+  
+     Table: persons
+=================== 
+
+
+Ans:  step 1:
+      --------
+
+
+         CREATE TABLE persons (FirstName varchar(30),LastName varchar(30),Address varchar(20),City                                           varchar(20),Age int(5));
+
+
+  step 2:
+  --------
+      
+
+        INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Mickey', 'Mouse', '123Fantasy Way', 'Anaheim', '73');
+
+
+        INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Bat', 'Man', '321Cavern Ave', 'Gotham', '54');
+
+
+       INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Wonder', 'Woman', '987Truth Way', 'Paradise', '39');
+
+
+       INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Donald', 'Duck', '555 Quack Street', 'Mallard', '65');
+
+
+       INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Bugs ', 'Bunny', '567Carrot Street', 'Rascal', '58');
+
+
+
+     INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Wiley', 'Coyote', '999 Acme Way', 'Canyon', '61');
+
+
+     INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Cat', 'Woman', '234 Purrfect Street', 'Hairball', '32');
+
+
+     INSERT INTO `persons` (`FirstName`, `LastName`, `Address`, `City`, `Age`) VALUES ('Tweety', 'Bird', '543', 'Itotltaw', '28');
+
+--------------------------------------------------------------------------------------------------------------
+
+Q.3)Create table below :employee  and incentive table:
+========================================================
+
+Ans: Table 1: employee table
+==============================
+
+
+step1:
+--------
+
+CREATE table employee( Employee_i int(3) not null,First_name varchar(30), Last_name varchar(30),Salary int(50),Joining_date datetime, Department varchar(30));
+
+
+    
+
+step 2:
+--------
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('1', 'John', 'Abraham', '1000000', '2013-01-01 12:00:00 AM', 'Banking');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('2', 'Michael', 'Clarke', '800000', '2013-01-01 12:00:00 AM', 'Insurance');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('3', 'Roy', 'Thomas', '700000', '2013-02-01 12:00:00 AM', 'Banking');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('4', 'Tom', 'Jose', '600000', '2013-02-01 12:00:00 AM', 'Insurance');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('5', 'Jerry', 'Pinto', '650000', '2013-02-01 12:00:00 AM', 'Insurance');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('6', 'Philip', 'Mathew', '750000', '2013-01-01 12:00:00 AM', 'Services');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('7', 'TestName1', '123', '650000', '2013-01-01 12:00:00 AM', 'Services');
+
+
+INSERT INTO `employee` (`Employee_i`, `First_name`, `Last_name`, `Salary`, `Joining_date`, `Department`) VALUES ('8', 'TestName2', 'Lname%', '600000', '2013-02-01 12:00:00 AM', 'Insurance');
+
+
+Table 2: Incentive Table
+=========================
+
+
+step 1:
+-------    
+
+         CREATE TABLE Incentive(Employee_ref_id int(2) not null,Incentive_date date,Incentive_amount int(6));
+
+step 2:
+-------
+
+         INSERT INTO `incentive` (`Employee_ref_id`, `Incentive_date`, `Incentive_amount`) VALUES ('1', '2013-02-01', '5000');
+
+
+       INSERT INTO `incentive` (`Employee_ref_id`, `Incentive_date`, `Incentive_amount`) VALUES ('2', '2013-02-01', '3000');
+
+
+      INSERT INTO `incentive` (`Employee_ref_id`, `Incentive_date`, `Incentive_amount`) VALUES ('3', '2013-02-01', '4000');
+
+
+    INSERT INTO `incentive` (`Employee_ref_id`, `Incentive_date`, `Incentive_amount`) VALUES ('1', '2013-01-01', '4500');
+
+
+    INSERT INTO `incentive` (`Employee_ref_id`, `Incentive_date`, `Incentive_amount`) VALUES ('2', '2013-01-01', '3500');
+
+
+
+
+ QUESTIONS:--
+
+
+
+a)   Get First_Name from employee table using Tom name “Employee Name”.   
+ Ans:-   SELECT First_name from employee; 
+
+
+b)  Get FIRST_NAME, Joining Date, and Salary from employee table.
+Ans:-   SELECT First_name,Joining_date,Salary from employee;
+
+
+c)  Get all employee details from the employee table order by First_Name Ascending and Salary descending?
+Ans:-   
+       SELECT * FROM 'employee' ORDER BY employee.First_name ASC,employee.Salary DESC;
+
+       SELECT * FROM `employee` ORDER BY employee.First_name ASC;
+
+       SELECT * FROM `employee` ORDER BY employee.Salary DESC;
+
+
+
+d)  Get employee details from employee table whose first name contains ‘J’.
+Ans:-   
+        SELECT * FROM `employee` WHERE First_name LIKE '%j%';
+
+​
+e) Get department wise maximum salary from employee table order by salary ascending?
+Ans:- 
+        SELECT * FROM employee ORDER BY Salary ASC;
+
+        SELECT Department ,Salary FROM employee ORDER BY employee.Salary ASC;
+
+
+f) Select first_name, incentive amount from employee and incentives table for those employees who have incentives and incentive amount greater than 3000.
+Ans:-
+
+     SELECT First_name,incentive_amount FROM employee INNER JOIN incentive ON  
+     employee.Employee_i=incentive.Employee_ref_id AND Incentive_amount>3000;
+
+​------------------------------------------------------------------------------------------------------------- 
+
+Q.4) Create table given below: Salesperson and Customer:
+========================================================
+
+Ans:  Table 1: Salesperson
+==========================
+
+    step 1:
+    --------
+
+              CREATE TABLE Salesperson(S_No int (7) primary key ,SNAME varchar(30),CITY varchar(20),COMM REAL);
+    
+    step 2:
+    --------
+              INSERT INTO `salesperson` (`S_No`, `SNAME`, `CITY`, `COMM`) VALUES ('1001', 'Peel', 'London', '.12');
+
+              INSERT INTO `salesperson` (`S_No`, `SNAME`, `CITY`, `COMM`) VALUES ('1002', 'Serres', 'San Jose', '.13');
+
+
+           INSERT INTO `salesperson` (`S_No`, `SNAME`, `CITY`, `COMM`) VALUES ('1004', 'Motika', 'London', '.11');
+
+           INSERT INTO `salesperson` (`S_No`, `SNAME`, `CITY`, `COMM`) VALUES ('1007', 'Rafkin', 'Barcelona', '.15');
+
+           INSERT INTO `salesperson` (`S_No`, `SNAME`, `CITY`, `COMM`) VALUES ('1003', 'Axelrod', 'New York', '.1');
+
+
+  Table 2: Customer
+===================
+
+
+  step 1:
+---------
+             CREATE TABLE Customer(CNM int(6) primary key,CNAME varchar(30),CITY varchar(20),RATING int(6),S_No int(7), FOREIGN KEY(S_No) REFERENCES salesperson(S_No));
+
+
+ step 2:
+--------
+
+          INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATING`, `S_No`) VALUES ('201', 'Hoffman', 'London', '100', '1001');
+
+
+         INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATING`, `S_No`) VALUES ('202', 'Giovanne', 'Roe', '200', '1003');
+
+         INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATING`, `S_No`) VALUES ('203', 'Liu', 'San Jose', '300', '1002');
+
+
+       INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATING`, `S_No`) VALUES ('204', 'Grass', 'Barcelona', '100', '1002');
+
+       INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATING`, `S_No`) VALUES ('206', 'Clemens', 'London', '300', '1007');
+
+     INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATING`, `S_No`) VALUES ('207', 'Pereira', 'Roe', '100', '1004');
+
+
+Questions:-
+
+
+
+a) All orders for more than $1000.
+Ans:- 
+
+        SELECT * FROM `salesperson` WHERE S_No>1000;
+
+
+b)Names and cities of all salespeople in London with commission above 0.12
+Ans:-
+ 
+        SELECT SNAME,CITY,COMM FROM salesperson WHERE COMM>0.12 AND CITY='London';  
+ 
+
+c) All salespeople either in Barcelona or in London.
+Ans:-
+
+        SELECT SNAME,CITY FROM salesperson WHERE CITY IN('Barcelona','London');
+​
+
+
+d) All salespeople with commission between 0.10 and 0.12. (Boundary values should be excluded).
+Ans:-
+        SELECT SNAME,COMM FROM salesperson WHERE COMM>0.10 AND COMM<0.12;
+
+​
+e) All customers excluding those with rating <= 100 unless they are located in Rome.
+Ans:-
+        SELECT CNAME FROM customer WHERE RATING<=100 OR CITY='Rome';
+​
+
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+           
+             
+​
+
+
+
+
+
+
+
+
+
+
+
+
